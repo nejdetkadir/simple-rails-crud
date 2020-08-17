@@ -19,6 +19,16 @@ class PhonesController < ApplicationController
     end
   end
 
+  def destroy
+    if @phone.destroy
+      flash[:success] = "#{@phone.name} has been successfully deleted."
+      redirect_to root_path
+    else
+      flash[:error] = "#{@phone.name} has been not successfully deleted."
+      redirect_to root_path
+    end
+  end
+
   def update
     if @phone.update(phone_params)
       flash[:success] = "#{@phone.name} has been successfully updated."

@@ -18,4 +18,5 @@
           span
             i.user.icon
             = p.seller
-        = link_to "Edit", edit_phone_path(p), class: "ui bottom attached button"
+        = link_to "Edit", edit_phone_path(p), class: "ui bottom attached blue button"
+        = link_to "Delete", phone_path(p), class: "ui bottom attached red button", method: :delete

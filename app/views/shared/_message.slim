@@ -1,6 +1,13 @@
 - flash.each do |name, message|
   .ui.container.notif
-    .ui.success.message
-      i.close.icon
-      .header 
-        = message
+    - if name.eql?("success")
+      .ui.success.message
+        i.close.icon
+        .header 
+          = message
+    - else
+      .ui.error.message
+        i.close.icon
+        .header 
+          = message
+      

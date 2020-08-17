@@ -1,0 +1,9 @@
+- if obj.errors.any?
+  .ui.error.message
+    i.close.icon
+    .header
+      |  ERROR 
+    ul.list
+      - obj.errors.full_messages.each do |msg|
+        li
+          = msg

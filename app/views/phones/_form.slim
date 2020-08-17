@@ -8,7 +8,10 @@
     = f.text_field :model
   .field
     = f.label :year, "Year"
-    = f.select :year, options_for_select(2010..Time.now.year{ |u| [u.to_i, u.to_i] }), {}, { :class => 'ui fluid dropdown' }
+    - if obj.new_record?
+      = f.select :year, options_for_select(2010..Time.now.year{ |u| [u.to_i, u.to_i] }), {}, { :class => 'ui fluid dropdown' }
+    - else 
+      = f.select :year, options_for_select(2010..Time.now.year{ |u| [u.to_i, u.to_i] }, :selected => obj.year), {}, { :class => 'ui fluid dropdown' }
   .field
     = f.label :url, "URL"
     = f.url_field :url
@@ -17,5 +20,8 @@
     = f.text_field :price
   .field
     = f.label :seller, "Seller"
-    = f.select :seller, options_for_select(seller_list.collect{ |u| [u, u] }), {}, { :class => 'ui fluid dropdown' }
+    - if obj.new_record?
+      = f.select :seller, options_for_select(seller_list.collect{ |u| [u, u] }), {}, { :class => 'ui fluid dropdown' }
+    - else 
+      = f.select :seller, options_for_select(seller_list.collect{ |u| [u, u] },:selected => obj.seller) {}, { :class => 'ui fluid dropdown' }
   = f.submit class: "ui button" 

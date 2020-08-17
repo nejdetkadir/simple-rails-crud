@@ -1,1 +1,20 @@
-p home#index
+.ui.container
+  .ui.link.cards
+    - @phones.each do |p|
+      .card
+        .image
+          img[src="https://semantic-ui.com/images/avatar2/large/matthew.png"]
+        .content
+          .header
+            = link_to p.name, p.url, target: "_blank"
+          .meta
+            = p.model
+          .description
+            = p.price + " "
+            = icon('fas', 'lira-sign')
+        .extra.content
+          span.right.floated
+            = p.year
+          span
+            i.user.icon
+            = p.seller

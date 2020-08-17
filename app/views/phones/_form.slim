@@ -1,0 +1,21 @@
+= render "shared/errors", obj: obj
+= form_for obj, :html => {:class => "ui form"}, url: path do |f|
+  .field
+    = f.label :name, "Name"
+    = f.text_field :name
+  .field
+    = f.label :model, "Model"
+    = f.text_field :model
+  .field
+    = f.label :year, "Year"
+    = f.select :year, options_for_select(2010..Time.now.year{ |u| [u.to_i, u.to_i] }), {}, { :class => 'ui fluid dropdown' }
+  .field
+    = f.label :url, "URL"
+    = f.url_field :url
+  .field
+    = f.label :price, "Price"
+    = f.text_field :price
+  .field
+    = f.label :seller, "Seller"
+    = f.select :seller, options_for_select(seller_list.collect{ |u| [u, u] }), {}, { :class => 'ui fluid dropdown' }
+  = f.submit class: "ui button" 

@@ -1,1 +1,5 @@
-p phones#new
+.ui.three.column.doubling.stackable.grid.container
+  .column
+  .column
+    = render 'phones/form', path: phones_path, obj: @phone
+  .column

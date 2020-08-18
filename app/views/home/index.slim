@@ -3,7 +3,7 @@
     - @phones.each do |p|
       .card
         .image
-          img[src="https://semantic-ui.com/images/avatar2/large/matthew.png"]
+          = image_tag p.image
         .content
           .header
             = link_to p.name, p.url, target: "_blank"
@@ -20,3 +20,4 @@
             = p.seller
         = link_to "Edit", edit_phone_path(p), class: "ui bottom attached blue button"
         = link_to "Delete", phone_path(p), class: "ui bottom attached red button", method: :delete
+        = link_to "Show", phone_path(p), class: "ui bottom attached yellow button"

@@ -40,7 +40,7 @@ class PhonesController < ApplicationController
 
   private
   def phone_params
-    params.require(:phone).permit(:name, :model, :year, :url, :price, :seller)
+    params.require(:phone).permit(:image, :name, :model, :year, :url, :price, :seller)
   end
 
   def set_phone

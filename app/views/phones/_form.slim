@@ -1,6 +1,12 @@
 = render "shared/errors", obj: obj
 = form_for obj, :html => {:class => "ui form"}, url: path do |f|
   .field
+    - unless obj.new_record?
+      = image_tag obj.image, class: "ui medium rounded centered image"
+  .field
+    = f.label :image, "Image"
+    = f.file_field :image
+  .field
     = f.label :name, "Name"
     = f.text_field :name
   .field

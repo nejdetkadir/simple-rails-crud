@@ -1,4 +1,6 @@
 class Phone < ApplicationRecord
+  has_one_attached :image
+
   validates :name, presence: true
   validates :model, presence: true
   validates :year, presence: true

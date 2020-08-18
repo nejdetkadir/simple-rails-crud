@@ -1,11 +1,14 @@
 class PhonesController < ApplicationController
-  before_action :set_phone, only: [:edit, :update, :destroy]
+  before_action :set_phone, only: [:edit, :update, :destroy, :show]
 
   def new
     @phone = Phone.new
   end
 
   def edit
+  end
+
+  def show
   end
 
   def create

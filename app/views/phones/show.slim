@@ -1,0 +1,25 @@
+.ui.three.column.doubling.stackable.grid.container
+  .column
+  .column
+    .ui.link.cards
+      .card
+        .image
+          = image_tag @phone.image
+        .content
+          .header
+            = link_to @phone.name, @phone.url, target: "_blank"
+          .meta
+            = @phone.model
+          .description
+            = @phone.price + " "
+            = icon('fas', 'lira-sign')
+        .extra.content
+          span.right.floated
+            = @phone.year
+          span
+            i.user.icon
+            = @phone.seller
+        = link_to "Edit", edit_phone_path(@phone), class: "ui bottom attached blue button"
+        = link_to "Delete", phone_path(@phone), class: "ui bottom attached red button", method: :delete
+        = link_to "Back", root_path, class: "ui bottom attached yellow button"
+  .column

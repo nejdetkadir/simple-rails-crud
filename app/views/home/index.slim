@@ -3,7 +3,7 @@
     - @phones.each do |p|
       .card
         .image
-          = image_tag p.image
+          = image_tag p.image, class: "single-image"
         .content
           .header
             = link_to p.name, p.url, target: "_blank"
